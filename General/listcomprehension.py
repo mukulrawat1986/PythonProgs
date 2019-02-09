@@ -19,3 +19,8 @@ odds = [num for num in nums if num % 2 != 0]
 
 # when using else keyword
 print([num*2 if num % 2 == 0 else num/2 for num in nums])
+
+# an example with string
+with_vowels = "This is so much fun!"
+
+print(''.join(char for char in with_vowels if char not in 'aeiou'))
