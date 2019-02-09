@@ -13,6 +13,10 @@ extra_payment_start_month = 1
 extra_payment_end_month = 60
 month = 0
 
+# open a file for writing
+out = open('schedule.txt', 'w')
+
+print('{:>5s} {:>10s} {:>10s} {:>10s}'.format('Month', 'Interest', 'Principal', 'Remaining'), file=out)
 while principal > 0:
     month += 1
     if month >= extra_payment_start_month and month <= extra_payment_end_month:
@@ -22,6 +26,9 @@ while principal > 0:
     interest = principal * (rate/12)
     principal = principal + interest - total_payment
     total_paid += total_payment
+    print('{:>5d} {:>10.2f} {:>10.2} {:>10.2f}'.format(month, interest,\
+             total_payment - interest, principal), file=out)
 
+out.close()
 print('Total paid: ', total_paid)
  
