@@ -23,4 +23,10 @@ print([num*2 if num % 2 == 0 else num/2 for num in nums])
 # an example with string
 with_vowels = "This is so much fun!"
 
-print(''.join(char for char in with_vowels if char not in 'aeiou'))
+# list comprehension with nested lists
+nested_list = [[j for j in range(1+(3*i), 4+(3*i))] for i in range(3)]
+print(nested_list)
+
+print([[num for num in range(1,4)] for val in range(1, 4)])
+
+print([['X' if num % 2 != 0 else 'O' for num in range(1, 4)] for i in range(3)])
